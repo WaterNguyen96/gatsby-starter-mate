@@ -1,8 +1,9 @@
+/* eslint-disable react/no-unused-state */
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import SwipeableViews from 'react-swipeable-views';
-import HorizontalTimeline from 'react-horizontal-timeline';
+import HorizontalTimeline from '@nhuthuy96/react-horizontal-timeline';
 
 const DetailContainer = styled.div`
   text-align: center !important;
@@ -68,18 +69,19 @@ export default class AchievementsTimeline extends React.Component {
     };
   }
 
-  componentWillMount() {
-    this.dates = this.props.content.map(entry => entry.date);
-  }
+  componentWillMount = () => {
+    const { props } = this;
+    this.dates = props.content.map(entry => entry.date);
+  };
 
   componentWillReceiveProps(nextProps) {
     this.dates = nextProps.content.map(entry => entry.date);
   }
 
   render() {
-    const state = this.state;
+    const { state, props } = this;
 
-    const views = this.props.content.map((entry, index) => {
+    const views = props.content.map((entry, index) => {
       // eslint-disable-next-line react/no-array-index-key
       return <ContentContainer key={index}>{entry.component}</ContentContainer>;
     });
@@ -110,6 +112,7 @@ export default class AchievementsTimeline extends React.Component {
               background: state.stylesBackground,
               foreground: state.stylesForeground,
               outline: state.stylesOutline,
+              noLinearGradient: true,
             }}
             values={this.dates}
             isOpenEnding={state.isOpenEnding}
