@@ -33,11 +33,20 @@ const NotFoundPage = () => (
   <Layout>
     <Section.Container id="404" Background={Background}>
       <Box width={[320, 400, 600]} m="auto">
-        <Heading color="primaryDark" fontSize={['9rem', '13rem', '16rem']}>
+        <Heading
+          color="primaryDark"
+          fontSize={['9rem', '13rem', '16rem']}
+          textAlign="center"
+        >
           404
         </Heading>
-        <Heading color="secondary" fontSize={['4rem', '5rem', '6rem']}>
-          {"There isn't anything here"}
+        <Heading
+          color="secondary"
+          fontSize={['4rem', '5rem', '6rem']}
+          textAlign="center"
+          fontWeight="bolder"
+        >
+          {'Page Not Found !'}
         </Heading>
       </Box>
     </Section.Container>
