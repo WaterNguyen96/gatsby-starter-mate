@@ -59,13 +59,8 @@ const Title = styled(Heading)`
   padding-bottom: 15px;
 `;
 
-const ProfilePicture = styled(Image)`
-  border-radius: 50%;
-  transition: all 0.25s ease-out;
-
-  &:hover {
-    border-radius: 20%;
-  }
+const TestimonyMedia = styled(Image)`
+  height: 350px;
 `;
 
 const Text = styled(TextBass)`
@@ -83,6 +78,12 @@ const Achievements = () => (
               achievedDate(formatString: "MMM DD, YYYY")
               detailDescription {
                 detailDescription
+              }
+              testimonyMedia {
+                id
+                fixed {
+                  src
+                }
               }
             }
           }
@@ -102,22 +103,28 @@ const Achievements = () => (
                   justifyContent="center"
                   alignItems="center"
                   flexWrap="wrap"
+                  my={[3, 3, 2]}
                 >
-                  <Box width={[1, 1, 4 / 6]} px={[1, 2, 4]}>
-                    <Text m={3}>
+                  <Box width={[1, 1, 5 / 12]} px={[1, 2, 4]}>
+                    <Text m={3} fontSize={22}>
                       {achievement.detailDescription.detailDescription}
                     </Text>
                   </Box>
                   <Box
-                    width={[1, 1, 2 / 6]}
-                    style={{ maxWidth: '300px', margin: 'auto' }}
+                    width={[1, 1, 7 / 12]}
+                    style={{
+                      maxWith: '600px',
+                      maxHeight: '350px',
+                      margin: 'auto',
+                    }}
                   >
-                    {/* <ProfilePicture
-                      src={profile.image.src}
-                      alt={profile.title}
-                      mt={[4, 4, 0]}
+                    <TestimonyMedia
+                      src={achievement.testimonyMedia.fixed.src}
+                      alt={achievement.testimonyMedia.id}
+                      mt={[2, 1, 1]}
                       ml={[0, 0, 1]}
-                    /> */}
+                      width={[1, 1 / 2, 3 / 4]}
+                    />
                   </Box>
                 </Flex>
               </Container>
