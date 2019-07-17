@@ -106,8 +106,8 @@ const ProjectTag = styled.div`
 const Project = ({
   name,
   description,
-  projectUrl,
-  repositoryUrl,
+  appStoreUrl,
+  googlePlayUrl,
   type,
   publishedDate,
   logo,
@@ -133,20 +133,24 @@ const Project = ({
               float: 'right',
             }}
           >
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="Check repository"
-                fontAwesomeIcon="github"
-                url={repositoryUrl}
-              />
-            </Box>
-            <Box mx={1} fontSize={5}>
-              <SocialLink
-                name="See project"
-                fontAwesomeIcon="globe"
-                url={projectUrl}
-              />
-            </Box>
+            {appStoreUrl && (
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="App Store"
+                  fontAwesomeIcon="apple"
+                  url={appStoreUrl}
+                />
+              </Box>
+            )}
+            {googlePlayUrl && (
+              <Box mx={1} fontSize={5}>
+                <SocialLink
+                  name="CH Play"
+                  fontAwesomeIcon="android"
+                  url={googlePlayUrl}
+                />
+              </Box>
+            )}
           </Flex>
           <ImageSubtitle
             bg="primaryLight"
@@ -169,8 +173,8 @@ const Project = ({
 Project.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  projectUrl: PropTypes.string.isRequired,
-  repositoryUrl: PropTypes.string.isRequired,
+  appStoreUrl: PropTypes.string,
+  googlePlayUrl: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   publishedDate: PropTypes.string.isRequired,
   logo: PropTypes.shape({
@@ -191,8 +195,8 @@ const Projects = () => (
               id
               name
               description
-              projectUrl
-              repositoryUrl
+              appStoreUrl
+              googlePlayUrl
               publishedDate(formatString: "YYYY")
               type
               logo {
