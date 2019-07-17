@@ -134,7 +134,7 @@ const Project = ({
             }}
           >
             {appStoreUrl && (
-              <Box mx={1} fontSize={5}>
+              <Box mx={1} fontSize={4}>
                 <SocialLink
                   name="App Store"
                   fontAwesomeIcon="apple"
@@ -143,7 +143,7 @@ const Project = ({
               </Box>
             )}
             {googlePlayUrl && (
-              <Box mx={1} fontSize={5}>
+              <Box mx={1} fontSize={4}>
                 <SocialLink
                   name="CH Play"
                   fontAwesomeIcon="android"
