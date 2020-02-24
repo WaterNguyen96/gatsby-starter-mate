@@ -30,10 +30,10 @@ const Helmet = ({ theme = {} }) => (
     `}
     render={data => {
       const { name, description, profile } = data.contentfulAbout;
-      const title = `${name} Portofolio`;
+      const title = `${name} Portfolio`;
 
       return (
-        <ReactHelmet>
+        <ReactHelmet htmlAttributes={{ lang: 'en' }}>
           <meta charSet="utf-8" />
           <title>{title}</title>
           <meta name="description" content={description} />
@@ -51,13 +51,14 @@ const Helmet = ({ theme = {} }) => (
           <meta name="og:site_name" content={title} />
           <meta name="og:locale" content="en_US" />
           <meta name="og:type" content="website" />
-
           <meta name="twitter:card" content="summary" />
           <meta name="twitter:title" content={title} />
           <meta name="twitter:description" content={description} />
           <meta name="twitter:image" content={`https:${profile.bigIcon.src}`} />
-          <meta name="twitter:image:src" content={`https:${profile.bigIcon.src}`} />
-
+          <meta
+            name="twitter:image:src"
+            content={`https:${profile.bigIcon.src}`}
+          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -74,13 +75,6 @@ const Helmet = ({ theme = {} }) => (
             type="image/png"
             sizes="16x16"
             href={`https:${profile.favicon16.src}`}
-          />
-
-          <link
-            href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-            rel="stylesheet"
-            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-            crossOrigin="anonymous"
           />
         </ReactHelmet>
       );
