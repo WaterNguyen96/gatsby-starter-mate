@@ -1,15 +1,4 @@
-![Gatsby Starter Mate logo](./media/gatsby-starter-mate-logo.png)
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/EmaSuriano/gatsby-starter-mate.svg)](https://greenkeeper.io/)
-[![eslint](https://img.shields.io/badge/eslint-enabled-green.svg)](https://eslint.org/)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
-[![Maintainability](https://api.codeclimate.com/v1/badges/c8fc076b30bd493f0cfc/maintainability)](https://codeclimate.com/github/EmaSuriano/gatsby-starter-mate/maintainability)
-
 [![Netlify Status](https://api.netlify.com/api/v1/badges/67a4dffe-1377-43a2-9106-e740e7a7b35f/deploy-status)](https://app.netlify.com/sites/happy-heyrovsky-08c95c/deploys)
-
-# Gatsby Starter: Mate
-
-> A portfolio starter for Gatsby integrated with Contentful CMS.
 
 The target audience are developers 💻 and tech writers ✍️.
 
