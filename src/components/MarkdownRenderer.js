@@ -7,14 +7,14 @@ const StyledLink = styled.a`
   display: inline-block;
   transition: color 250ms, text-shadow 250ms;
   color: black;
-  text-decoration: none;
   cursor: pointer;
   position: relative;
+  text-decoration: none;
 
   &:after {
     position: absolute;
     z-index: -1;
-    bottom: -1px;
+    bottom: 1px;
     left: 50%;
     transform: translateX(-50%);
     content: '';
@@ -58,7 +58,7 @@ const MarkdownLink = ({ href, children }) => {
       {({ onClick }) => <StyledLink onClick={onClick}>{children}</StyledLink>}
     </SectionLink>
   ) : (
-    <StyledLink href={href} target="_blank">
+    <StyledLink href={href} target="_blank" rel="noreferrer">
       {children}
     </StyledLink>
   );

@@ -72,3 +72,4 @@ netlify.toml
 # Other
 yarn.lock
 
+.vscode/

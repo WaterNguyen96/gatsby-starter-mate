@@ -1,31 +1,41 @@
 import React from 'react';
-import FontAwesome from 'react-fontawesome';
 import { Link } from 'rebass';
-import { Tooltip } from 'react-tippy';
+import Tippy from '@tippy.js/react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import FontAwesomeIcon from 'react-fontawesome';
+import 'tippy.js/dist/tippy.css'; // eslint-disable-line
 
 const IconLink = styled(Link)`
   transition: color 0.5s;
-  color: ${props => props.theme.colors.primary};
+  color: ${props =>
+    props.theme.colors[props.color] || props.theme.colors.primary};
+  text-decoration: none;
 
   &:hover {
     color: ${props => props.theme.colors.primaryLight};
   }
 `;
 
-const SocialLink = ({ fontAwesomeIcon, name, url }) => (
-  <Tooltip title={name} position="bottom" trigger="mouseenter">
-    <IconLink href={url} target="_blank">
-      <FontAwesome name={fontAwesomeIcon} />
+const SocialLink = ({ fontAwesomeIcon, name, url, color }) => (
+  <Tippy content={name} placement="bottom" trigger="mouseenter" arrow={false}>
+    <IconLink
+      href={url}
+      target="_blank"
+      color={color}
+      rel="noreferrer"
+      aria-label={name}
+    >
+      <FontAwesomeIcon name={fontAwesomeIcon} />
     </IconLink>
-  </Tooltip>
+  </Tippy>
 );
 
 SocialLink.propTypes = {
   fontAwesomeIcon: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
+  color: PropTypes.string,
 };
 
 export default SocialLink;
