@@ -98,6 +98,12 @@ export default class AchievementsTimeline extends React.Component {
             indexClick={index => {
               this.setState({ value: index, previous: state.value });
             }}
+            getLabel={date =>
+              new Date(date).toLocaleString('default', {
+                month: 'long',
+                year: 'numeric',
+              })
+            }
             isKeyboardEnabled={state.isKeyboardEnabled}
             isTouchEnabled={state.isTouchEnabled}
             labelWidth={state.labelWidth}

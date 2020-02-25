@@ -75,7 +75,7 @@ const Achievements = () => (
           contentfulAbout {
             achievements {
               title
-              achievedDate(formatString: "MMM DD, YYYY")
+              achievedDate
               detailDescription {
                 detailDescription
               }
