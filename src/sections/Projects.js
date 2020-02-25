@@ -44,7 +44,10 @@ const Background = () => (
   </div>
 );
 
-const CARD_HEIGHT = '200px';
+const cardHeight = 270;
+const CARD_HEIGHT = `${cardHeight}px`;
+const TWO_THIRDS_CARD_HEIGHT = `${(cardHeight / 3) * 2}px`;
+const HALF_CARD_HEIGHT = `${cardHeight / 2}px`;
 
 const MEDIA_QUERY_SMALL = '@media (max-width: 400px)';
 
@@ -61,31 +64,32 @@ const TextContainer = styled.div`
   flex-direction: column;
   padding: 10px;
   width: 100%;
-  width: calc(100% - ${CARD_HEIGHT});
+  width: calc(100% - ${TWO_THIRDS_CARD_HEIGHT});
 
   ${MEDIA_QUERY_SMALL} {
-    width: calc(100% - (${CARD_HEIGHT} / 2));
+    width: calc(100% - ${HALF_CARD_HEIGHT});
   }
 `;
 
 const ImageContainer = styled.div`
   margin: auto;
   width: ${CARD_HEIGHT};
+  height: 100%;
 
   ${MEDIA_QUERY_SMALL} {
-    width: calc(${CARD_HEIGHT} / 2);
+    width: ${HALF_CARD_HEIGHT};
   }
 `;
 
 const ProjectImage = styled(Image)`
-  width: ${CARD_HEIGHT};
-  height: ${CARD_HEIGHT};
-  padding: 40px;
+  width: ${TWO_THIRDS_CARD_HEIGHT};
+  height: ${TWO_THIRDS_CARD_HEIGHT};
+  padding: 20px;
   margin-top: 0px;
 
   ${MEDIA_QUERY_SMALL} {
-    height: calc(${CARD_HEIGHT} / 2);
-    width: calc(${CARD_HEIGHT} / 2);
+    height: ${HALF_CARD_HEIGHT};
+    width: ${HALF_CARD_HEIGHT};
     margin-top: calc(${CARD_HEIGHT} / 4);
     padding: 10px;
   }
@@ -94,9 +98,8 @@ const ProjectImage = styled(Image)`
 const ProjectTag = styled.div`
   position: relative;
   height: ${CARD_HEIGHT};
-  top: calc(
-    -${CARD_HEIGHT} - 3.5px
-  ); /*don't know why I have to add 3.5px here ... */
+  top: -${TWO_THIRDS_CARD_HEIGHT};
+  );
 
   ${MEDIA_QUERY_SMALL} {
     top: calc(-${CARD_HEIGHT} - 3.5px + (${CARD_HEIGHT} / 4));
