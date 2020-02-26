@@ -33,6 +33,11 @@
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
+  command = "gatsby build"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "development"
+  ACCESS_TOKEN = "e08453da025c35e83c60d9aeb991762c23738818fab38d0ce7045d508673e381"
 
 
 # Redirect default Netlify subdomain to primary domain
