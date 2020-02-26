@@ -70,6 +70,4 @@ netlify.toml
 .DS_Store
 
 # Other
-yarn.lock
-
 .vscode/
