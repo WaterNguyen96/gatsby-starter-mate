@@ -1,10 +1,3 @@
-# Redirect default Netlify subdomain to primary domain
-[[redirects]]
-  from = "https://happy-heyrovsky-08c95c.netlify.com"
-  to = "https://www.thuykafe.com"
-  status = 301
-  force = true
-
 # Settings in the [build] context are global and are applied to all contexts
 # unless otherwise overridden by more specific contexts.
 [build]
@@ -40,3 +33,11 @@
 # All deploys generated from a pull/merge request
 # will inherit these settings.
 [context.deploy-preview]
+
+
+# Redirect default Netlify subdomain to primary domain
+[[redirects]]
+  from = "https://happy-heyrovsky-08c95c.netlify.com"
+  to = "https://www.thuykafe.com"
+  status = 301
+  force = true
