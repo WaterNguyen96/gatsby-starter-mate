@@ -64,12 +64,9 @@ typings/
 .cache/
 public/
 .gatsby-context.js
-netlify.toml
 
 # mac FS
 .DS_Store
 
 # Other
-yarn.lock
-
 .vscode/

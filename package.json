@@ -13,6 +13,9 @@
     "e2e:open": "cypress open",
     "e2e:ci": "DETERMINISTIC=true start-server-and-test serve http://localhost:9000 'percy exec -- cypress run'"
   },
+  "engines": {
+    "node": "^ 10"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/EmaSuriano/gatsby-starter-mate.git"
@@ -67,7 +70,7 @@
     "axe-core": "^3.4.1",
     "chalk": "^3.0.0",
     "contentful-import": "^7.4.0",
-    "cypress": "^3.8.3",
+    "cypress": "^4.0.2",
     "cypress-axe": "^0.5.1",
     "eslint": "^5.6.0",
     "eslint-config-airbnb": "^17.1.0",

@@ -1,0 +1,48 @@
+# Settings in the [build] context are global and are applied to all contexts
+# unless otherwise overridden by more specific contexts.
+[build]
+
+  # Default build command.
+  command = "echo 'default context'"
+  publish = "public/"
+
+  # Directory to change to before starting a build.
+  # This is where we will look for package.json/.nvmrc/etc.
+  base = ""
+  
+  environment = { SPACE_ID = "6ap4qv988u2n" }
+
+[context.production]
+  command = "gatsby build"
+
+[context.production.environment]
+  NODE_ENV = "production"
+  ACCESS_TOKEN = "e08453da025c35e83c60d9aeb991762c23738818fab38d0ce7045d508673e381"
+
+# Branch deploy context:
+# All deploys that are not from a pull/merge request
+# or from the production branch will inherit these settings.
+[context.branch-deploy]
+  command = "gatsby build"
+
+[context.branch-deploy.environment]
+  NODE_ENV = "development"
+  ACCESS_TOKEN = "e08453da025c35e83c60d9aeb991762c23738818fab38d0ce7045d508673e381"
+
+# Deploy Preview context:
+# All deploys generated from a pull/merge request
+# will inherit these settings.
+[context.deploy-preview]
+  command = "gatsby build"
+
+[context.deploy-preview.environment]
+  NODE_ENV = "development"
+  ACCESS_TOKEN = "e08453da025c35e83c60d9aeb991762c23738818fab38d0ce7045d508673e381"
+
+
+# Redirect default Netlify subdomain to primary domain
+[[redirects]]
+  from = "https://happy-heyrovsky-08c95c.netlify.com"
+  to = "https://www.thuykafe.com"
+  status = 301
+  force = true
