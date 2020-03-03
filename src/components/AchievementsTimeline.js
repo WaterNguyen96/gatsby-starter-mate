@@ -39,6 +39,12 @@ const ContentContainer = styled.div`
   }
 `;
 
+const TimelineContainer = styled.div`
+  width: 60%;
+  height: 150px;
+  margin: 0 auto;
+`;
+
 export default class AchievementsTimeline extends React.Component {
   static propTypes = {
     content: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -69,12 +75,12 @@ export default class AchievementsTimeline extends React.Component {
     };
   }
 
-  componentWillMount = () => {
+  UNSAFE_componentWillMount = () => {
     const { props } = this;
     this.dates = props.content.map(entry => entry.date);
   };
 
-  componentWillReceiveProps(nextProps) {
+  UNSAFE_componentWillReceiveProps(nextProps) {
     this.dates = nextProps.content.map(entry => entry.date);
   }
 
@@ -88,7 +94,7 @@ export default class AchievementsTimeline extends React.Component {
 
     return (
       <div>
-        <div style={{ width: '60%', height: '100px', margin: '0 auto' }}>
+        <TimelineContainer>
           <HorizontalTimeline
             fillingMotion={{
               stiffness: state.fillingMotionStiffness,
@@ -124,7 +130,7 @@ export default class AchievementsTimeline extends React.Component {
             isOpenEnding={state.isOpenEnding}
             isOpenBeginning={state.isOpenBeginning}
           />
-        </div>
+        </TimelineContainer>
         <DetailContainer>
           <SwipeableViews
             index={state.value}

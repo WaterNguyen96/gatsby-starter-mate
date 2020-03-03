@@ -1232,18 +1232,20 @@
     call-me-maybe "^1.0.1"
     glob-to-regexp "^0.3.0"
 
-"@nhuthuy96/react-horizontal-timeline@^1.5.4":
-  version "1.5.4"
-  resolved "https://registry.yarnpkg.com/@nhuthuy96/react-horizontal-timeline/-/react-horizontal-timeline-1.5.4.tgz#cf7e2323d654d2d743cde6f484380e8d4291a2b7"
-  integrity sha512-J2Sd9k09hdAblBfBUsouBUdvfZI9JP43vf6q7FjwPX6rbSkN1xVRgtXVF0XpKa+Vp6Ea+ogr1ZKNmMTZfUioUQ==
+"@nhuthuy96/react-horizontal-timeline@^1.6.1":
+  version "1.6.1"
+  resolved "https://registry.yarnpkg.com/@nhuthuy96/react-horizontal-timeline/-/react-horizontal-timeline-1.6.1.tgz#129c6158ec4d3b91c75640927dd9a937326ef303"
+  integrity sha512-fVmgdfHYAgEoLNi2GBbITKtNN4YcW1mHdX+rP9YiRb8+SyW5m6kVnc605OMa1M73VwbhsMHlqF/T3RrFC1Womg==
   dependencies:
     "@babel/plugin-transform-runtime" "^7.1.0"
     color "^3.0.0"
     prop-types "^15.6.0"
-    radium "^0.25.0"
+    radium "^0.26.0"
+    react "^16.13.0"
     react-dimensions "2.0.0-alpha2"
+    react-dom "^16.13.0"
     react-icons "^3.1.0"
-    react-motion "^0.5.0"
+    react-motion "^0.5.2"
 
 "@nodelib/fs.scandir@2.1.3":
   version "2.1.3"
@@ -7492,6 +7494,13 @@ hoek@6.x.x:
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-6.1.3.tgz#73b7d33952e01fe27a38b0457294b79dd8da242c"
   integrity sha512-YXXAAhmF9zpQbC7LEcREFtXfGq5K1fmd+4PHkBq8NUqmzW3G+Dq10bI/i0KucLRwss3YYFQ0fSfoxBZYiGUqtQ==
 
+hoist-non-react-statics@3.3.0:
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.0.tgz#b09178f0122184fb95acf525daaecb4d8f45958b"
+  integrity sha512-0XsbTXxgiaCDYDIWFcwkmerZPSwywfUqYmwT4jzewKTQSWoE6FCMoUVOeBJWK3E/CrWbxRG3m5GzY4lnIwGRBA==
+  dependencies:
+    react-is "^16.7.0"
+
 hoist-non-react-statics@^3.3.0:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/hoist-non-react-statics/-/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
@@ -11759,12 +11768,13 @@ queue@6.0.1:
   dependencies:
     inherits "~2.0.3"
 
-radium@^0.25.0:
-  version "0.25.2"
-  resolved "https://registry.yarnpkg.com/radium/-/radium-0.25.2.tgz#a9c24684d35dac8e55f4cb0d4a24ca739d772cdf"
-  integrity sha512-I2+G4axdz+wW2LA8gsXWvcNWE0vBjXixMFgkSaYQrCO1Ag2m+Dz447OY9Hs2QK7rJ8lXL2gGx1bbZdI4sPvoIQ==
+radium@^0.26.0:
+  version "0.26.0"
+  resolved "https://registry.yarnpkg.com/radium/-/radium-0.26.0.tgz#3f5107e35da257abbcfafb486f11ca2ce99f1b0b"
+  integrity sha512-4+oqTuMmrOpuwk7ikzft5Aau24UTD/SsurgRmLlDsZZeegCCScmviCiBiLw6XyFk8BiACYfjB2Yq0gmgHQfV0Q==
   dependencies:
     exenv "^1.2.1"
+    hoist-non-react-statics "3.3.0"
     inline-style-prefixer "^4.0.0"
     prop-types "^15.5.8"
 
@@ -11866,6 +11876,16 @@ react-dimensions@2.0.0-alpha2:
   dependencies:
     element-resize-event "^2.0.4"
     lodash.debounce "^4.0.6"
+
+react-dom@^16.13.0:
+  version "16.13.0"
+  resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.13.0.tgz#cdde54b48eb9e8a0ca1b3dc9943d9bb409b81866"
+  integrity sha512-y09d2c4cG220DzdlFkPTnVvGTszVvNpC73v+AaLGLHbkpy3SSgvYq8x0rNwPJ/Rk/CicTNgk0hbHNw1gMEZAXg==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
+    scheduler "^0.19.0"
 
 react-dom@^16.7.0:
   version "16.12.0"
@@ -11972,7 +11992,7 @@ react-markdown@^4.3.1:
     unist-util-visit "^1.3.0"
     xtend "^4.0.1"
 
-react-motion@^0.5.0, react-motion@^0.5.2:
+react-motion@^0.5.2:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/react-motion/-/react-motion-0.5.2.tgz#0dd3a69e411316567927917c6626551ba0607316"
   integrity sha512-9q3YAvHoUiWlP3cK0v+w1N5Z23HXMj4IF4YuvjvWegWqNPfLXsOBE/V7UvQGpXxHFKRQQcNcVQE31g9SB/6qgQ==
@@ -12053,6 +12073,15 @@ react-text-loop@^2.0.1:
     cxs "^6.2.0"
     react-fast-compare "2.0.4"
     react-motion "^0.5.2"
+
+react@^16.13.0:
+  version "16.13.0"
+  resolved "https://registry.yarnpkg.com/react/-/react-16.13.0.tgz#d046eabcdf64e457bbeed1e792e235e1b9934cf7"
+  integrity sha512-TSavZz2iSLkq5/oiE7gnFzmURKZMltmi193rm5HEoUDAXpzT9Kzw6oNZnGoai/4+fUnm7FqS5dwgUL34TujcWQ==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+    prop-types "^15.6.2"
 
 react@^16.7.0, react@^16.8.0:
   version "16.12.0"
@@ -12782,6 +12811,14 @@ scheduler@^0.18.0:
   version "0.18.0"
   resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.18.0.tgz#5901ad6659bc1d8f3fdaf36eb7a67b0d6746b1c4"
   integrity sha512-agTSHR1Nbfi6ulI0kYNK0203joW2Y5W4po4l+v03tOoiJKpTBbxpNhWDvqc/4IcOw+KLmSiQLTasZ4cab2/UWQ==
+  dependencies:
+    loose-envify "^1.1.0"
+    object-assign "^4.1.1"
+
+scheduler@^0.19.0:
+  version "0.19.0"
+  resolved "https://registry.yarnpkg.com/scheduler/-/scheduler-0.19.0.tgz#a715d56302de403df742f4a9be11975b32f5698d"
+  integrity sha512-xowbVaTPe9r7y7RUejcK73/j8tt2jfiyTednOvHbA8JoClvMYCp+r8QegLwK/n8zWQAtZb1fFnER4XLBZXrCxA==
   dependencies:
     loose-envify "^1.1.0"
     object-assign "^4.1.1"
