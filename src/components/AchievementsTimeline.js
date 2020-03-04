@@ -39,6 +39,12 @@ const ContentContainer = styled.div`
   }
 `;
 
+const TimelineContainer = styled.div`
+  width: 60%;
+  height: 150px;
+  margin: 0 auto;
+`;
+
 export default class AchievementsTimeline extends React.Component {
   static propTypes = {
     content: PropTypes.arrayOf(PropTypes.object).isRequired,
@@ -47,6 +53,7 @@ export default class AchievementsTimeline extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      dates: props.content.map(entry => entry.date),
       value: 0,
       previous: 0,
 
@@ -69,26 +76,24 @@ export default class AchievementsTimeline extends React.Component {
     };
   }
 
-  componentWillMount = () => {
-    const { props } = this;
-    this.dates = props.content.map(entry => entry.date);
-  };
-
-  componentWillReceiveProps(nextProps) {
-    this.dates = nextProps.content.map(entry => entry.date);
+  componentDidUpdate(prevProps) {
+    if (this.props.content !== prevProps.content) {
+      this.setState({
+        dates: this.props.content.map(entry => entry.date),
+      });
+    }
   }
 
   render() {
     const { state, props } = this;
 
-    const views = props.content.map((entry, index) => {
-      // eslint-disable-next-line react/no-array-index-key
-      return <ContentContainer key={index}>{entry.component}</ContentContainer>;
-    });
+    const views = props.content.map((entry, index) => (
+      <ContentContainer key={index}>{entry.component}</ContentContainer>
+    ));
 
     return (
       <div>
-        <div style={{ width: '60%', height: '100px', margin: '0 auto' }}>
+        <TimelineContainer>
           <HorizontalTimeline
             fillingMotion={{
               stiffness: state.fillingMotionStiffness,
@@ -120,11 +125,11 @@ export default class AchievementsTimeline extends React.Component {
               outline: state.stylesOutline,
               noLinearGradient: true,
             }}
-            values={this.dates}
+            values={state.dates}
             isOpenEnding={state.isOpenEnding}
             isOpenBeginning={state.isOpenBeginning}
           />
-        </div>
+        </TimelineContainer>
         <DetailContainer>
           <SwipeableViews
             index={state.value}
