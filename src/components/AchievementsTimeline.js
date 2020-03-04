@@ -53,6 +53,7 @@ export default class AchievementsTimeline extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      dates: props.content.map(entry => entry.date),
       value: 0,
       previous: 0,
 
@@ -75,22 +76,20 @@ export default class AchievementsTimeline extends React.Component {
     };
   }
 
-  UNSAFE_componentWillMount = () => {
-    const { props } = this;
-    this.dates = props.content.map(entry => entry.date);
-  };
-
-  UNSAFE_componentWillReceiveProps(nextProps) {
-    this.dates = nextProps.content.map(entry => entry.date);
+  componentDidUpdate(prevProps) {
+    if (this.props.content !== prevProps.content) {
+      this.setState({
+        dates: this.props.content.map(entry => entry.date),
+      });
+    }
   }
 
   render() {
     const { state, props } = this;
 
-    const views = props.content.map((entry, index) => {
-      // eslint-disable-next-line react/no-array-index-key
-      return <ContentContainer key={index}>{entry.component}</ContentContainer>;
-    });
+    const views = props.content.map((entry, index) => (
+      <ContentContainer key={index}>{entry.component}</ContentContainer>
+    ));
 
     return (
       <div>
@@ -126,7 +125,7 @@ export default class AchievementsTimeline extends React.Component {
               outline: state.stylesOutline,
               noLinearGradient: true,
             }}
-            values={this.dates}
+            values={state.dates}
             isOpenEnding={state.isOpenEnding}
             isOpenBeginning={state.isOpenBeginning}
           />

@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "build": "gatsby clean && gatsby build",
-    "develop": "gatsby clean && gatsby develop",
-    "start": "yarn develop",
-    "serve": "yarn build && gatsby serve -p 9000",
+    "start": "gatsby clean && gatsby develop",
+    "serve": "npm run build && gatsby serve -p 9000",
     "lint": "eslint ./src",
     "setup": "node ./bin/setup.js",
     "e2e:open": "cypress open",
@@ -34,7 +33,7 @@
   },
   "homepage": "https://github.com/EmaSuriano/gatsby-starter-mate#readme",
   "dependencies": {
-    "@nhuthuy96/react-horizontal-timeline": "^1.6.1",
+    "@nhuthuy96/react-horizontal-timeline": "^1.6.2",
     "@tippy.js/react": "^3.1.1",
     "contentful": "^7.13.1",
     "dotenv": "^8.2.0",
